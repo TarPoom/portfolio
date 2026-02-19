@@ -405,17 +405,13 @@
         // Start typing when page loads
         window.onload = typeText;
 
-
-        // --- Simple Scroll Reveal Animation (Optional improvement) ---
-        // This checks if elements with 'animate-block' are visible and triggers animation
         const animatedBlocks = document.querySelectorAll('.animate-block');
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // Reset animation to make it play again upon view
                     entry.target.style.animation = 'none';
-                    entry.target.offsetHeight; /* trigger reflow */
+                    entry.target.offsetHeight; 
                     entry.target.style.animation = null; 
                 }
             });
@@ -429,3 +425,4 @@
 
 </body>
 </html>
+
